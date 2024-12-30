@@ -1,9 +1,9 @@
 package com.skcodify.securitylearning.exceptions;
 
-public class InvalidUserException extends Throwable {
+public class InvalidCredentialException extends Throwable {
 
     private String message;
-    public InvalidUserException(String message) {
+    public InvalidCredentialException(String message) {
         this.message = message;
     }
 

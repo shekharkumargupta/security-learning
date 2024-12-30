@@ -41,6 +41,9 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         AppUser appUser = users.get(username);
+        if(appUser == null){
+            throw new UsernameNotFoundException("Invalid User: " + username);
+        }
         List<SimpleGrantedAuthority> simpleGrantedAuthorityList = new ArrayList<>();
         appUser.getRoles().forEach(s -> {
             simpleGrantedAuthorityList.add(new SimpleGrantedAuthority("ROLE_" + s));
