@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: security-learning
+
+jwt:
+  secret: ZDOAhj93i3I9mpNWIkOWRewrgchfgwrx
+  expiration: 10
